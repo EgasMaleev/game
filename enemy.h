@@ -1,20 +1,23 @@
 #ifndef ENEMY_H
 #define ENEMY_H
 
-
-#include <QGraphicsRectItem>
+//#include <QGraphicsRectItem>
 #include <QObject>
 #include <QGraphicsItem>
 #include <QGraphicsPixmapItem>
+#include <QMouseEvent>
 
 class Enemy: public QObject,public QGraphicsRectItem{
     Q_OBJECT
 public:
     Enemy(QGraphicsItem * parent=0);
+    int rand_int = (rand() % 46) * 15;
+    int ordinata = rand_int % 4;
 
-    void on_mousePressedEvent(QGraphicsSceneMouseEvent *event);
+    void mousePressEvent(QGraphicsSceneMouseEvent *event);
+    void mouseMoveEvent(QGraphicsRectItem *event);
+
 public slots:
     void move();
-    void mousePressEvent(QGraphicsSceneMouseEvent *event);
 };
 #endif // ENEMY_H

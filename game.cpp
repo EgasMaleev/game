@@ -16,6 +16,8 @@ Game::Game(QWidget *parent){
     scene = new QGraphicsScene();
     scene->setSceneRect(0,0,800,600);
 
+    //Game.setWindowTitle("самая лучшая программа");
+
     setScene(scene);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -31,6 +33,38 @@ Game::Game(QWidget *parent){
 void Game::spawn()
 {
     Enemy * enemy = new Enemy();
-    //Enemy* enemy = new Enemy(QIcon("C:\\hello\\smile.png"));
     scene->addItem(enemy);
 }
+/*void Game::mouseMoveEvent(QMouseEvent *event) {
+    if (event->type() == QMoveEvent)
+    {
+        //this->ordinata = 1 + 2*ordinata;
+        qDebug() << "click";
+    }
+    qDebug() << QString::number(event->pos().x());
+    qDebug() << QString::number(event->pos().y());
+}*/
+/*void Game::eventFilter(QObject *obj, QEvent *event)
+{
+    if (obj == Enemy) {
+        QEvent::Type type = event->type();
+        if  (type == QEvent::MouseMove) {
+
+            qDebug()<<"No curcor";
+
+        } else if (type == QEvent::HoverEnter) {
+
+            qDebug()<<"YES curcor";
+
+        }else if (type == QEvent::MouseButtonPress) {
+            qDebug()<<"Voy voy enter";
+        }
+    }
+    if  (event->type() == QEvent::MouseMove) {
+
+        qDebug()<<"No curcor";
+
+    }
+
+    //return QWidget::eventFilter(obj, event);
+}*/

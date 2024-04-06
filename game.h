@@ -17,7 +17,8 @@ public:
     Game(QWidget * parent=0);
 
     QGraphicsScene * scene;
-
+    //void mouseMoveEvent(QMouseEvent *event);
+    //void eventFilter(QObject *obj, QEvent *event);
 private slots:
     void spawn();
 };
